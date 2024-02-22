@@ -17,7 +17,14 @@ import java.util.logging.SimpleFormatter;
  * Для логирования использовать логгер logger класса BubbleSort.
  */
 public class temp02 {
-    static Logger logger = Logger.getLogger(temp02.class.getName());
+    // Создание логгера с нужным форматом вывода 
+    private static Logger logger = null;
+
+    static {
+        System.setProperty("java.util.logging.SimpleFormatter.format",
+                "%1$tF %1$tR %5$s %n");
+        logger = Logger.getLogger(BubbleSort.class.getName());
+    }
 
     public static void main(String[] args) {
 
